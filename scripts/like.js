@@ -33,13 +33,22 @@ function openDialog(event) {
   stopButtonAction(event);
 
   if (!dialog.open) {
-    dialog.showModal();
+    try {
+      dialog.showModal();
+    } catch {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
 function closeDialog(event) {
   stopButtonAction(event);
-  dialog.close();
+
+  try {
+    dialog.close();
+  } catch {
+    dialog.removeAttribute('open');
+  }
 }
 
 saveButton.addEventListener('click', openDialog);
