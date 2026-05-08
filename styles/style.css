@@ -329,8 +329,13 @@
 }
 
 .dialog-window {
+  display: none;
   inline-size: clamp(341px, 336.7746px + 1.1268vw, 353px);
   border: 2px solid #000000;
+}
+
+.dialog-window[open] {
+  display: block;
 }
 
 .dialog-container {
