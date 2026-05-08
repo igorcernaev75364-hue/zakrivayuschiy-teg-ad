@@ -495,7 +495,7 @@
       <div class="save-container">
         <button
           type="button"
-          onclick="window['dialog-id'].showModal();"
+          onclick="document.getElementById('dialog-id').showModal();"
           class="save-container__btn-show-modal button"
           aria-controls="dialog-id"
         >
@@ -525,7 +525,11 @@
           <p class="dialog-container__text">
             Вставьте дискету, чтобы продолжить
           </p>
-          <button class="dialog-container__btn-ok button" type="submit">
+          <button
+            class="dialog-container__btn-ok button"
+            type="button"
+            onclick="document.getElementById('dialog-id').close();"
+          >
             <span class="button__text">ОК</span>
           </button>
         </div>
