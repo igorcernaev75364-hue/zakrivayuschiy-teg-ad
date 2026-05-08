@@ -495,7 +495,6 @@
       <div class="save-container">
         <button
           type="button"
-          onclick="document.getElementById('dialog-id').showModal();"
           class="save-container__btn-show-modal button"
           aria-controls="dialog-id"
         >
@@ -513,27 +512,21 @@
       </div>
     </main>
     <dialog id="dialog-id" class="dialog-window">
-      <form method="dialog">
-        <div class="dialog-container">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 29 28"
-            class="dialog-container__diskette-icon"
-          >
-            <use xlink:href="./svg/diskette.svg#diskette"></use>
-          </svg>
-          <p class="dialog-container__text">
-            Вставьте дискету, чтобы продолжить
-          </p>
-          <button
-            class="dialog-container__btn-ok button"
-            type="button"
-            onclick="document.getElementById('dialog-id').close();"
-          >
-            <span class="button__text">ОК</span>
-          </button>
-        </div>
-      </form>
+      <div class="dialog-container">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 29 28"
+          class="dialog-container__diskette-icon"
+        >
+          <use xlink:href="./svg/diskette.svg#diskette"></use>
+        </svg>
+        <p class="dialog-container__text">
+          Вставьте дискету, чтобы продолжить
+        </p>
+        <button class="dialog-container__btn-ok button" type="button">
+          <span class="button__text">ОК</span>
+        </button>
+      </div>
     </dialog>
     <script src="./scripts/like.js"></script>
   </body>
