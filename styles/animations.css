@@ -27,6 +27,16 @@
   }
 }
 
+@keyframes arrow-move {
+  from {
+    inset-inline-start: -20px;
+  }
+
+  to {
+    inset-inline-start: -16px;
+  }
+}
+
 .like-icon.is-liked .heart {
   animation: heart-scale 0.3s ease-in 0.1s 1 normal;
 }

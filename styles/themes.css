@@ -1,0 +1,48 @@
+.page[data-theme="light"] {
+  --grid-background: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+  --theme-background: #fff;
+  --accent-color: #000;
+  --contour-color: #000;
+}
+
+.page[data-theme="dark"] {
+  --grid-background: repeating-linear-gradient(
+      to right,
+      rgb(0 255 0 / 0.2) 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgb(0 255 0 / 0.2) 0 2px,
+      transparent 2px 4px
+    ),
+    linear-gradient(to bottom, #000 0.01%, #1a1a1a 100%);
+  --theme-background: #000;
+  --accent-color: #00cc14;
+  --contour-color: #00cc14;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page[data-theme="auto"] {
+    --grid-background: repeating-linear-gradient(
+        to right,
+        rgb(0 255 0 / 0.2) 0 2px,
+        transparent 2px 4px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        rgb(0 255 0 / 0.2) 0 2px,
+        transparent 2px 4px
+      ),
+      linear-gradient(to bottom, #000 0.01%, #1a1a1a 100%);
+    --theme-background: #000;
+    --accent-color: #00cc14;
+    --contour-color: #00cc14;
+  }
+}

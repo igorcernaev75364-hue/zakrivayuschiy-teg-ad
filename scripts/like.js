@@ -24,15 +24,26 @@ likeButtonArray.forEach((button, index) => {
   button.onclick = () => toggleIsLiked(likeHeartArray[index], button);
 });
 
-saveButton.addEventListener('click', (event) => {
+function stopButtonAction(event) {
   event.preventDefault();
-  dialog.showModal();
-});
+  event.stopPropagation();
+}
 
-dialogCloseButton.addEventListener('click', (event) => {
-  event.preventDefault();
+function openDialog(event) {
+  stopButtonAction(event);
+
+  if (!dialog.open) {
+    dialog.showModal();
+  }
+}
+
+function closeDialog(event) {
+  stopButtonAction(event);
   dialog.close();
-});
+}
+
+saveButton.addEventListener('click', openDialog);
+dialogCloseButton.addEventListener('click', closeDialog);
 
 function toggleIsLiked(heart, button) {
   heart.classList.toggle('is-liked');
