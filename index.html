@@ -528,6 +528,7 @@
           type="button"
           class="save-container__btn-show-modal button"
           aria-controls="dialog-id"
+          onclick="event.preventDefault(); try { document.querySelector('.dialog-window').showModal(); } catch (error) { document.querySelector('.dialog-window').setAttribute('open', ''); } return false;"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -554,7 +555,11 @@
         <p class="dialog-container__text">
           Вставьте дискету, чтобы продолжить
         </p>
-        <button class="dialog-container__btn-ok button" type="button">
+        <button
+          class="dialog-container__btn-ok button"
+          type="button"
+          onclick="event.preventDefault(); try { this.closest('dialog').close(); } catch (error) { this.closest('dialog').removeAttribute('open'); } return false;"
+        >
           <span class="button__text">ОК</span>
         </button>
       </div>
